@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Portafolio</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="header-img" aria-hidden="true"></div>
+    <h1 class="header">Daniel Josué Cedeño Sornoza</h1>
+    <div class="subtitle">Cuarto "A"</div>
+    <nav class="navigation">
+      <ul>
+        <li class="nav-item"><a href="#acerca">Acerca de mí</a></li>
+        <li class="nav-item"><a href="#proyectos">Mis Proyectos</a></li>
+        <li class="nav-item"><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="acerca">
+      <div class="intro">
+        <h2>Acerca de mi</h2>
+        <p>Hola mi nombre es Daniel Josué Cedeño Sornoza, soy un entusiasta estudiante de Ingeniería de Tecnologías de la Información. 
+          Mi mundo gira en torno al código y las redes, donde encuentro la magia de la creatividad y la tecnología. 
+          A mis 20 años, te invito a explorar conmigo proyectos que reflejan mi pasión por la innovación. ¡Bienvenido a mi espacio digital!</p>
+      </div>
+
+      <div class="social">
+        <div class="links">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+      
+    <section id="proyectos" role="region" aria-labelledby="proyectos-heading">
+      <h2 id="proyectos-heading">Mis Proyectos</h2>
+      <div class="carousel">
+        <button class="arrow arrow-left" aria-label="Anterior"></button>
+        <div class="window">
+          <ul class="project-container">
+            <li class="project1-container">
+              <button class="project1" tabindex="0" onclick="showModal('images/project1.png')">
+                <img src="images/project1.png" class="project" alt="Mi primer proyecto">
+              </button>
+            </li>
+            <li class="project2-container">
+              <button class="project2" tabindex="0" onclick="showModal('images/project2.png')">
+                <img src="images/project2.png" class="project" alt="Mi segundo proyecto">
+              </button>
+            </li>
+            <li class="project3-container">
+              <button class="project3" tabindex="0" onclick="showModal('images/project3.png')">
+                <img src="images/project3.png" class="project" alt="Mi tercer proyecto">
+              </button>
+            </li>
+            <li class="project4-container">
+              <button class="project4" tabindex="0" onclick="showModal('images/project4.png')">
+                <img src="images/project4.png" class="project" alt="Mi cuarto proyecto">
+              </button>
+            </li>
+            <li class="project5-container">
+              <button class="project5" tabindex="0" onclick="showModal('images/project5.png')">
+                <img src="images/project5.png" class="project" alt="Mi quinto proyecto">
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button class="arrow arrow-right" aria-label="Boton para ir hacia adelante"></button>
+      </div>
+    </section>
+    
+
+
+    <section id="contacto">
+      <div class="contact-section">
+        <h2>Contacto</h2>
+        <div class="form-container">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" aria-describedby="name-error" required />
+          <span id="name-error" class="error-message"></span>
+          <br />
+          
+          <label for="correo">Correo</label>
+          <input type="text" id="correo" aria-describedby="email-error" required />
+          <span id="email-error" class="error-message"></span>
+          <br />
+          
+          <div class="message-input">
+            <label for="mensaje">Mensaje</label>
+            <input type="text" id="mensaje" aria-describedby="message-error" required />
+            <span id="message-error" class="error-message"></span>
+            <br />
+          </div>
+          
+          <button class="send-button">Enviar</button>
+        </div>
+      </div>
+      <div class="notification">El formulario fue enviado sin errores</div>
+
+      <div class="modal-container">
+        <div class="modal">
+          <h2 class="header" id="modal-header" tabindex="0">Mis proyectos</h2>
+          <div class="modal-project-image" id="modal-image-container">
+          </div>
+          <button class="modal-close" onclick="closeModal()">Cerrar</button>
+        </div>
+      </div>
+      
+      <script>
+        function showModal(imageSrc) {
+          document.getElementById("modal-image-container").style.backgroundImage = `url(${imageSrc})`;
+          document.querySelector(".modal-container").style.display = "center";
+        }
+        function closeModal() {
+          document.querySelector(".modal-container").style.display = "none";
+        }
+      </script>
+      
+      
+    </section>
+  </main>
+
+  <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
